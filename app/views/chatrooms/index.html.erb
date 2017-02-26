@@ -1,17 +1,27 @@
-<div class="row col-md-8 col-md-offset-2" id="chatroom-title">
-  <h1>Chatrooms</h1>
+<div style="height:100% !important; display: table !important; padding-left:0 !important;" class="col-md-3 nopadding">
+<%= render 'layouts/sidebar' %>
 </div>
 
-<div class="row col-md-8 col-md-offset-2" id="chatrooms">
-  <%= render partial: 'chatroom_form', locals: {chatroom: @chatroom} %>
-  <div id="chatroom-errors">
-    
+<div class="col-md-9" style="height:100%; padding:0;">
+  <div id="chatroom-title">
+    <h1>Chatrooms</h1>
   </div>
-    <ul id="chatroom-index"> 
-  <% if @chatrooms.any? %>
-      <%= render @chatrooms%>
-  <%else %>
-    </ul>
-    <p>Be the first one to make a chatroom!</p>
-  <% end %>
+
+
+  <div style="text-align:center;bottom:0 !important;top:0 !important;" class="main">
+    <h1>Select a Group to Start Chatting</h1>
+    <p style="text-align:center;"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU4IDU4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1OCA1ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6IzUyQzMwNjsiIGQ9Ik01OCwxNi4yMDdjMC04LjgyMi03LjE3OC0xNi0xNi0xNkgxN2MtOC44MjIsMC0xNyw3LjE3OC0xNywxNnYxNmMwLDguNDg1LDcuNjQ0LDE1LjQyOSwxNiwxNS45NDkgICB2LTMuOTQ5YzAtMC41NTMsMC40NDgtMSwxLTFzMSwwLjQ0NywxLDF2NHYxdjguNTg2bDEuMzU5LTEuMzU5YzUuMzA2LTUuMzA1LDEyLjM1OS04LjIyNywxOS44Ni04LjIyN0g0MmM4LjgyMiwwLDE2LTcuMTc4LDE2LTE2ICAgVjE2LjIwN3oiLz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBkPSJNMzAsMTguMjA3SDE2Yy0wLjU1MiwwLTEtMC40NDgtMS0xczAuNDQ4LTEsMS0xaDE0YzAuNTUyLDAsMSwwLjQ0OCwxLDFTMzAuNTUyLDE4LjIwNywzMCwxOC4yMDd6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRkZGRkZGOyIgZD0iTTQzLDI2LjIwN0gxNmMtMC41NTIsMC0xLTAuNDQ4LTEtMXMwLjQ0OC0xLDEtMWgyN2MwLjU1MiwwLDEsMC40NDgsMSwxUzQzLjU1MiwyNi4yMDcsNDMsMjYuMjA3eiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIGQ9Ik00MywzNC4yMDdIMTZjLTAuNTUyLDAtMS0wLjQ0OC0xLTFzMC40NDgtMSwxLTFoMjdjMC41NTIsMCwxLDAuNDQ4LDEsMVM0My41NTIsMzQuMjA3LDQzLDM0LjIwN3oiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" width="200" height="200" /></p>
+  </div>
+
+
+
+  <div class="row" id="chatrooms">
+      <ul id="chatroom-index">
+    <% if @chatrooms.any? %>
+        <li><%= render @chatrooms%></li>
+    <%else %>
+      </ul>
+      <p>Be the first one to make a chatroom!</p>
+    <% end %>
+  </div>
 </div>

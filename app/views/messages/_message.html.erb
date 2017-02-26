@@ -1,1 +1,8 @@
-<p><strong><%=message.user.username%>:</strong> <%=message.content%></p>
+<p><% if message.user == current_user  %>
+	<%= link_to image_tag("hangouts.png", alt: "flak.me"), root_path, class: "profpic", id: "prof-pic" %>
+	<strong><span style="color:#337AB7;"><%=message.user.username%></span>:</strong> <%=message.content%></p>
+	<% else %>
+	<%= link_to image_tag("love-message.png", alt: "flak.me"), root_path, class: "profpic", id: "prof-pic" %>
+	<strong><%=message.user.username%>:</strong> <%=message.content%>
+	<% end %>
+</p>

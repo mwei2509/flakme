@@ -1,0 +1,30 @@
+<div class="left sidebar">
+    <hr />
+    <h2 style="font-size:20px;">Your Groups</h2>
+    <ul>
+    </ul>
+    <hr />
+    <h2 style="font-size:20px;">Join Groups</h2>
+    <ul>
+        <%  @chatrooms.each do |chatroom| %>
+          <li style="list-style-type:none; font-weight:900;color:white; line-height:45px;">
+            <%= link_to image_tag("donut-2.png", alt: "flak.me"), root_path, class: "image-stamp", id: "logo" %>
+            <a style="color:white;" class="chat-topic" href="/chatrooms/<%= chatroom.slug %>"><%= chatroom.topic.capitalize %></a>
+          </li>
+        <% end %>
+    </ul>
+    <hr />
+    <h2>Create a Group</h2>
+    <div class="row" id="chatrooms">
+      <%= render partial: 'chatroom_form', locals: {chatroom: @chatroom} %>
+      <div id="chatroom-errors">
+      </div>
+    </div>
+</div>
+<script>
+$('.toggle').click(function(){
+  $('.sidebar').toggleClass('collapsed');
+})
+$sidebar = $(window).height();
+$('.left').css('height', $sidebar);
+</script>

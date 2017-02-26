@@ -1,9 +1,50 @@
-<div class="jumbotron">
-  <h1>Welcome to Chatty!</h1>
-  <p>The Rails 5 + Action Cable example app</p>
+<div >
   <%if current_user%>
-    <p><span class="glyphicon glyphicon-heart"></span> Nice to see you, <%= current_user.username%> <span class="glyphicon glyphicon-heart"></span></p>
+  	<div class="container alert alert-success alert-dismissable">
+	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  Nice to see you, <strong><%= current_user.username%></strong>
+	</div>
+  <% else %>
+  	<div class="alert alert-success alert-dismissable">
+	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  <strong>Sign up or log in, </strong>then create a group or browse existing rooms to start chatting.
+	</div>
+	<div style="margin-top:100px;margin:auto;width:50%;">
+		    <div class="card"></div>
+		    <div class="card">
+		  		<%= form_for(User.new, url: login_path) do |f| %>
+		      	<div style="margin:auto;width:50%;text-align:left;"><%=f.label :username%></div>
+			    	<div class="input-group">
+			        	<span class="input-group-addon">@</span>
+			        	<%= f.text_field :username, class: "form-control formbox"%>
+			      	</div>
+			      	<div style="margin:auto; width:50%;padding-top:10px; text-align;left;" class="actions">
+			        	<%= f.submit "log in", class: "btn btn-primary" %>
+			      	</div>
+		    	<% end %>
+		    </div>
+	</div>
+	<div style="padding-top:100px;margin:auto;width:75%;">
+		<ul id="chatroom-index">
+		    <% if @chatrooms.any? %>
+		        <li><%= render @chatrooms %></li>
+		    <%else %>
+				<p>Be the first one to make a chatroom!</p>
+			<% end %>
+		</ul>			
+	</div>	    		
   <%end%>
-  <p>Sign up or log in, then create a chatroom or browse existing rooms to start chatting.</p>
 </div>
 
+
+<script>
+  
+	$('.toggle').on('click', function() {
+	  $('.container').stop().addClass('active');
+	});
+
+	$('.close').on('click', function() {
+	  $('.container').stop().removeClass('active');
+	});
+
+</script>

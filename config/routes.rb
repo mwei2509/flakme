@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root "welcome#about"
-  
+
   get '/signup', to: "registrations#new"
   post '/signup', to: "registrations#create"
 
