@@ -2,17 +2,17 @@
   <div class="col-md-8 col-md-offset-2">
 
     <h2 id="log-in-title">Sign up</h2>
-    <div class="auth-form well">
+    <div style="margin-bottom:300px;" class="auth-form well">
     <%= form_for(User.new, url: signup_path) do |f| %>
 
-      <%=f.label :username%>
+      <%=f.label :create_your_username %>
       <div class="input-group">
         <span class="input-group-addon">@</span>
           <%= f.text_field :username, class: "form-control"%>
       </div>
 
       <div class="actions">
-        <%= f.submit "sign up", class: "btn btn-primary" %>
+        <%= f.submit "sign up", class: "btn btn-signup" %>
       </div>
     <% end %>
     </div>

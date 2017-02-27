@@ -1,7 +1,7 @@
 <div style="background-color:white;" class="row">
   <div class="col-md-3"><%= render 'layouts/sidebar' %></div>
-  <div style="padding-left:0 !important; margin-left:0 !important; background-color:white !important;" class="col-md-9 no-pad">
-    <div style="background-color:white;width:80%;">
+  <div class="col-md-9 no-pad chatbox-top-outer">
+    <div style="bottom:50% !important;background-color:white;width:80%;">
       <div class="">
         <h1><%= @chatroom.topic %></h1>
         <div class="panel panel-default">
@@ -13,8 +13,10 @@
             <div class="panel-body hidden" id="messages"></div>
           <%end%>
         </div>
-          <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom}%>
       </div>
+    </div>
+    <div style="bottom:0; height:150px !important;position:fixed;width:100% !important;background-color:white !important; padding-top:100px;">
+      <%= render partial: 'messages/message_form', locals: {message: @message, chatroom: @chatroom}%>
     </div>
   </div>
 </div>

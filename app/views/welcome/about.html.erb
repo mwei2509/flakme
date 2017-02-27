@@ -1,13 +1,19 @@
 <div >
   <%if current_user%>
-  	<div class="container alert alert-success alert-dismissable">
+  	<div style="margin-top:100px; height:60px;line-height:50px;padding:5px;padding-bottom:15px;text-align:center;" class="container alert alert-success alert-dismissable">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	  Nice to see you, <strong><%= current_user.username%></strong>
+	    <div style="margin-top:100px;text-align:center;bottom:0 !important;top:0 !important;" class="main">
+    <div></div>
+	<a class="action visit btn btn-signup" target="_blank" href="/chatrooms">View / Create a Group <i class="fa fa-plus" aria-hidden="true"></i></a>
+    <h1>Select a Group to Start Chatting</h1>
+    <p style="text-align:center;"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDU4IDU4IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1OCA1ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPHBhdGggc3R5bGU9ImZpbGw6IzUyQzMwNjsiIGQ9Ik01OCwxNi4yMDdjMC04LjgyMi03LjE3OC0xNi0xNi0xNkgxN2MtOC44MjIsMC0xNyw3LjE3OC0xNywxNnYxNmMwLDguNDg1LDcuNjQ0LDE1LjQyOSwxNiwxNS45NDkgICB2LTMuOTQ5YzAtMC41NTMsMC40NDgtMSwxLTFzMSwwLjQ0NywxLDF2NHYxdjguNTg2bDEuMzU5LTEuMzU5YzUuMzA2LTUuMzA1LDEyLjM1OS04LjIyNywxOS44Ni04LjIyN0g0MmM4LjgyMiwwLDE2LTcuMTc4LDE2LTE2ICAgVjE2LjIwN3oiLz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkZGRkY7IiBkPSJNMzAsMTguMjA3SDE2Yy0wLjU1MiwwLTEtMC40NDgtMS0xczAuNDQ4LTEsMS0xaDE0YzAuNTUyLDAsMSwwLjQ0OCwxLDFTMzAuNTUyLDE4LjIwNywzMCwxOC4yMDd6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRkZGRkZGOyIgZD0iTTQzLDI2LjIwN0gxNmMtMC41NTIsMC0xLTAuNDQ4LTEtMXMwLjQ0OC0xLDEtMWgyN2MwLjU1MiwwLDEsMC40NDgsMSwxUzQzLjU1MiwyNi4yMDcsNDMsMjYuMjA3eiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIGQ9Ik00MywzNC4yMDdIMTZjLTAuNTUyLDAtMS0wLjQ0OC0xLTFzMC40NDgtMSwxLTFoMjdjMC41NTIsMCwxLDAuNDQ4LDEsMVM0My41NTIsMzQuMjA3LDQzLDM0LjIwN3oiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" width="200" height="200" /></p>
+  </div>
 	</div>
   <% else %>
-  	<div class="alert alert-success alert-dismissable">
+  	<div style="text-align:center !important;" class="alert alert-success alert-dismissable">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	  <strong>Sign up or log in, </strong>then create a group or browse existing rooms to start chatting.
+	  <strong>Sign up or log in, </strong>then create or join a group to start chatting!
 	</div>
 	<div style="margin-top:100px;margin:auto;width:50%;">
 		    <div class="card"></div>
@@ -19,10 +25,15 @@
 			        	<%= f.text_field :username, class: "form-control formbox"%>
 			      	</div>
 			      	<div style="margin:auto; width:50%;padding-top:10px; text-align;left;" class="actions">
-			        	<%= f.submit "log in", class: "btn btn-primary" %>
+			        	<%= f.submit "log in", class: "btn btn-signup" %>
 			      	</div>
 		    	<% end %>
 		    </div>
+	</div>
+	<div style="margin-top:40px; text-align:center">Don't have an account? Create a username here: 
+		<a class="action visit btn btn-signup" target="_blank" href="/signup"><i class="fa fa-plus" aria-hidden="true"></i>
+		<span class="text">Join Chat</span>
+		</a>
 	</div>
 	<div style="padding-top:100px;margin:auto;width:75%;">
 		<ul id="chatroom-index">

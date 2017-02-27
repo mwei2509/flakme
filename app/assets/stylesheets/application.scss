@@ -1186,6 +1186,8 @@ width:35px;
 .panel, panel-default,panel-body {
 	border-color:white !important;
 	border-width:0;	
+  height:500px;
+  overflow: scroll;  
 }
 
 .boxbox{
@@ -1218,4 +1220,39 @@ border-radius:4px;
 
 .profpic img{
   width:20px;
+}
+
+
+.signup a {
+  
+}
+
+.login a{
+
+}
+
+.icon-option:before {
+    content: "\f067";
+}
+
+ .social .action {
+display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 10px;
+    background: black;
+    font-size: 12px;
+    color: white;
+    border-radius: 3px;
+}
+
+.panel .panel-default{
+  overflow:hidden;
+}
+
+.chatbox-top-outer{
+padding-left:0 !important; margin-left:0 !important; background-color:white !important;  
+}
+
+.chat-column{
+height:100px;line-height:50px;border-style:solid;border-width:1px;border-color:#E7E7E7;padding:15px;border-radius:4px;  
 }
